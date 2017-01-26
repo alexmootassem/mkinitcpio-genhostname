@@ -1,0 +1,11 @@
+#!/bin/sh
+
+build() {
+	add_runscript
+    add_binary "/usr/bin/tr"
+    add_file "/usr/share/dict/american-english"
+}
+
+help() {
+	echo "Generates random system hostname within initramfs at run_latehook."
+}

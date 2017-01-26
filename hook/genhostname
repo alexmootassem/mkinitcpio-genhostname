@@ -1,0 +1,9 @@
+#!/bin/sh
+
+run_latehook() {
+    local newroot="/new_root/"
+    randomwords="$(egrep -x "[a-zA-Z]*" /usr/share/dict/american-english | shuf -n2)"
+    hostname="$(echo -n ${randomwords} | /usr/bin/tr ' ' '_')"
+    msg ":: Setting random system hostname to '${hostname}'.."
+    echo -n "${hostname}" > "${newroot}/etc/hostname"
+}
